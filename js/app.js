@@ -12,6 +12,8 @@ var Enemy = function(x, y, speed, direction) {
     this.x = x;
     this.y = y;
     this.speed = (Math.floor(Math.random()));
+    this.lives = 3;
+    this.score = 0;
     this.direction = -1;
 
     // The image/sprite for our enemies, this uses
@@ -55,7 +57,8 @@ var Player = function(x, y) {
     this.x = 200;
     this.y = 400;
     this.sprite = 'images/char-boy.png';
-    this.previousLocation = { x: this.x, y: this.y };
+    this.previousLocation = {x: this.x, y: this.y};
+    this.score = 0;
 };
 
 // Updates location of player
@@ -68,6 +71,12 @@ Player.prototype.update = function() {
 // a handleInput() method.
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.win = function() {
+    console.log("score");
+    this.score += 10;
+    document.getElementById('player-score').innerHTML = this.score;
 };
 
 // Handles key envents with direction parameters related
@@ -116,4 +125,58 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+});
+
+var Gem = function() {
+
+    this.spriteRange = ["images/blue-gem.png", "images/Heart.png"];
+
+    this.y = 200;
+    this.yRange = [60, 80, 100];
+    this.xRange = [60, 80, 350];
+    this.x = startPos;
+    var startPos = this.xRange[0];
+}
+var gem1 = new Gem();
+var gem2 = new Gem();
+var gem3 = new Gem();
+var allGems = [gem1, gem2, gem3];
+
+Gem.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
+function gemCollisions() {
+    for (var i = 0; i < allGems.length; i++) {
+        if (Math.abs(player.x - allGems[i].x) < 60 && Math.abs(player.y - allGems[i].y) < 60) {
+            player.win();
+            allGems[i].reset();
+        }
+    }
+};
+
+
+Gem.prototype.getRandomY = function() {
+    return this.yRange[Math.floor(Math.random() * this.yRange.length)];
+}
+Gem.prototype.getRandomX = function() {
+    return this.xRange[Math.floor(Math.random() * this.xRange.length)];
+}
+Gem.prototype.getRandomSprite = function() {
+    return this.spriteRange[Math.floor(Math.random() * this.spriteRange.length)];
+}
+
+Gem.prototype.reset = function() {
+    this.y = this.getRandomY();
+    this.x = this.getRandomX();
+    this.sprite = this.getRandomSprite();
+};
+
+
+Gem.prototype.update = function() {
+    this.reset();
+}
+
+allGems.forEach(function(gem) {
+    gem.update();
 });
