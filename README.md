@@ -1,7 +1,7 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-This is the [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) I used for self-checking my submission. The functions I've  written are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+This is the [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) I used for self-checking my submission. The functions I've  written are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and the keyword 'this' is used appropriately within my class and class prototype functions to refer to the object the function is called upon.
 
 # arcade-game
 HTML5 Canvas-based clone of the classic arcade game "Frogger".
