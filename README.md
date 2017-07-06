@@ -1,7 +1,23 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+This is the [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) I used for self-checking my submission. The functions I've  written are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 # arcade-game
+HTML5 Canvas-based clone of the classic arcade game "Frogger".
+Game objects are implemented using JavaScript object-oriented programming.
+
+# Installation
+- Download or Clone Repository
+- Unzip
+- Open Index.html with your favorite web browser
+
+# How to play
+- Use the arrow keys to move.
+- Collect the gem and key.
+- Avoid bugs, or you have to start over.
+- Reload your browser to reset the game.
+
+# Credits
+- Art assets and game engine provided by [Udacity](http://udacity.com).
+- Classic Arcade Game Clone is a project in Udacity's Front-End Web Developer Nanodegree.
