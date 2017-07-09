@@ -363,10 +363,6 @@ var Engine = (function(global) {
         renderEntities();
     }
 
-    /* This function is called by the render function and is called on each game
-     * tick. It's purpose is to then call the render functions you have defined
-     * on your enemy and player entities within app.js
-     */
     function renderEntities(score) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
